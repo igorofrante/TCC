@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,15 @@ DATABASES = {
         'PASSWORD':'123456',
         'HOST':'localhost',
         'PORT':'3306'
-    }
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'b6pynxztpmh2ip1zilgs',
+    #     'USER':'ubbp8vf7q28vgqkk',
+    #     'PASSWORD':'tjtDHVLzXyRhLggtovJo',
+    #     'HOST':'b6pynxztpmh2ip1zilgs-mysql.services.clever-cloud.com',
+    #     'PORT':'3306'
+    # }
 }
 
 
@@ -139,3 +148,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'

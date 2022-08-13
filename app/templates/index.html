@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Hello World!</p>
+    {% include 'navbar.html' %}
+    <a href="/initialize"><button>Iniciar</button></a>
+    <p>Padrão: {{ result0 }}</p>
+    <p>OverSample: {{ result1 }}</p>
 </body>
 </html>
