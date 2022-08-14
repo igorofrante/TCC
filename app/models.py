@@ -1,8 +1,11 @@
 from django.db import models
+from localflavor.br.models import BRCPFField
 
 # Create your models here.
 
 class Cliente(models.Model):
+    nomec = models.CharField(max_length=200)
+    cpf = BRCPFField(unique=True)
     mit_bal = models.IntegerField() 
     sex = models.PositiveSmallIntegerField()
     education = models.PositiveSmallIntegerField()

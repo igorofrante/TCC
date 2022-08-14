@@ -2,11 +2,11 @@ import pandas as pd
 import pymysql
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split, KFold, cross_val_score,cross_validate
+from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 
 df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
-df = df.drop(["id"], axis=1)
+df = df.drop(["id","nomec","cpf"], axis=1)
 
 def startNN():
 
@@ -65,16 +65,35 @@ def dashboard():
 
     fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
     fig0.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig0.update_layout(title_text="Gênero")
+    fig0.update_layout(title_text="Gênero",autosize=False, width=500, height=500)
     fig0 = newLegend(fig0,{"1": "Feminino", "2": "Masculino"})
 
     fig1 = go.Figure(data=[go.Pie(labels=df['education'])])
     fig1.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig1.update_layout(title_text="Educação")
+    fig1.update_layout(title_text="Educação",autosize=False, width=500, height=500)
     fig1 = newLegend(fig1,{"1": "Pós Graduado", "2": "Graduado","3": "Ensino Médio","4": "Outros"})
 
+    fig2 = go.Figure(data=[go.Pie(labels=df['marriage'])])
+    fig2.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
+    fig2.update_layout(title_text="Estado Civil",autosize=False, width=500, height=500)
+    fig2 = newLegend(fig2,{"1": "Casado", "2": "Solteiro","3": "Outros"})
 
-    app.layout = html.Div([html.H1(children='Hello Dash'),dcc.Graph(figure = fig0),dcc.Graph(figure = fig1)])
+
+    app.layout = html.Div([ #MAIN DIV
+               
+        html.Div([ ### FIGURES Divs
+            html.Div([
+                dcc.Graph(figure = fig0),
+            ], className = 'col-sm'),
+            html.Div([
+                dcc.Graph(figure = fig1),
+            ], className = 'col-sm'),
+            html.Div([
+                dcc.Graph(figure = fig2),
+            ], className = 'col-sm')
+        ], className = 'row')
+        
+        ])
     
     #app.run_server(debug=True)
 

@@ -1,3 +1,61 @@
 #app{
     height: 100vh;
 }
+
+body {
+    background-color: #ebeff5;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* coloca a lista em horizontal */
+ul li {
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+    background-color: #0d6efd;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+ul li a:hover{
+    background-color: #4ea4ff;
+}
+
+/* dropdown */
+
+/*não mostra a sublista, ou seja, tira o display */
+ ul li ul li { 
+    display: none; 
+}
+
+/*só vai mostrar a sublista quando o passar o mouse em cima da lista, ou seja, quando fizer o "hover" */
+ ul li:hover ul li { 
+    display: block;
+}
+
+/* Geral */
+label {
+    width: 105px;
+}
+input[type=number]{
+    width: 100px;
+}
+input[type=text]{
+    width: 300px;
+} 
+
+textarea {
+    width: 300px;
+}
