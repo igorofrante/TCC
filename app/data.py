@@ -47,6 +47,7 @@ import dash
 from dash import dcc, html
 from django_plotly_dash import DjangoDash
 from dash import Dash, dcc, html, Input, Output
+import dash_bootstrap_components as dbc
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -60,8 +61,7 @@ def newLegend(fig, newNames):
     return(fig)
 
 def dashboard():
-    
-    app = DjangoDash('dashboard')   # replaces dash.Dash
+    app = DjangoDash('main', external_stylesheets=[dbc.themes.BOOTSTRAP])   # replaces dash.Dash
 
     fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
     fig0.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
@@ -80,20 +80,30 @@ def dashboard():
 
 
     app.layout = html.Div([ #MAIN DIV
-               
-        html.Div([ ### FIGURES Divs
-            html.Div([
-                dcc.Graph(figure = fig0),
-            ], className = 'col-sm'),
-            html.Div([
-                dcc.Graph(figure = fig1),
-            ], className = 'col-sm'),
-            html.Div([
-                dcc.Graph(figure = fig2),
-            ], className = 'col-sm')
-        ], className = 'row')
+        dbc.Row([
+            dbc.Col([dcc.Graph(figure = fig0)]),
+            dbc.Col([dcc.Graph(figure = fig1)]),
+        ]),
+        dbc.Row([dbc.Col([dcc.Graph(figure = fig2)])])  
         
         ])
+
+
+    # app.layout = html.Div([ #MAIN DIV
+               
+    #     html.Div([ ### FIGURES Divs
+    #         html.Div([
+    #             dcc.Graph(figure = fig0),
+    #         ], className = 'col-8'),
+    #         html.Div([
+    #             dcc.Graph(figure = fig1),
+    #         ], className = 'col-8'),
+    #         html.Div([
+    #             dcc.Graph(figure = fig2),
+    #         ], className = 'col-8')
+    #     ], className = 'row')
+        
+    #     ])
     
     #app.run_server(debug=True)
 
