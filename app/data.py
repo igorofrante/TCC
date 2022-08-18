@@ -43,12 +43,10 @@ def startNN():
     return result
 
 
-import dash
 from dash import dcc, html
 from django_plotly_dash import DjangoDash
 from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
-import plotly.express as px
 import plotly.graph_objects as go
 
 def newLegend(fig, newNames):
@@ -61,7 +59,7 @@ def newLegend(fig, newNames):
     return(fig)
 
 def dashboard():
-    app = DjangoDash('main', external_stylesheets=[dbc.themes.BOOTSTRAP])   # replaces dash.Dash
+    app = DjangoDash('main', add_bootstrap_links=True)   # replaces dash.Dash
 
     fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
     fig0.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
@@ -78,32 +76,21 @@ def dashboard():
     fig2.update_layout(title_text="Estado Civil",autosize=False, width=500, height=500)
     fig2 = newLegend(fig2,{"1": "Casado", "2": "Solteiro","3": "Outros"})
 
-
     app.layout = html.Div([ #MAIN DIV
-        dbc.Row([
-            dbc.Col([dcc.Graph(figure = fig0)]),
-            dbc.Col([dcc.Graph(figure = fig1)]),
-        ]),
-        dbc.Row([dbc.Col([dcc.Graph(figure = fig2)])])  
+               
+        html.Div([ ### FIGURES Divs
+            html.Div([
+                dcc.Graph(figure = fig0),
+            ], className = 'col-8'),
+            html.Div([
+                dcc.Graph(figure = fig1),
+            ], className = 'col-8'),
+            html.Div([
+                dcc.Graph(figure = fig2),
+            ], className = 'col-8')
+        ], className = 'row')
         
         ])
-
-
-    # app.layout = html.Div([ #MAIN DIV
-               
-    #     html.Div([ ### FIGURES Divs
-    #         html.Div([
-    #             dcc.Graph(figure = fig0),
-    #         ], className = 'col-8'),
-    #         html.Div([
-    #             dcc.Graph(figure = fig1),
-    #         ], className = 'col-8'),
-    #         html.Div([
-    #             dcc.Graph(figure = fig2),
-    #         ], className = 'col-8')
-    #     ], className = 'row')
-        
-    #     ])
     
     #app.run_server(debug=True)
 
