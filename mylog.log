@@ -1,0 +1,420 @@
+DEBUG:root:<tr><th><label for="id_nomec">Nome Completo:</label></th><td><input type="text" name="nomec" value="teste" required id="id_nomec"></td></tr>
+<tr><th><label for="id_cpf">CPF:</label></th><td><input type="text" name="cpf" value="151.559.547-11" maxlength="14" minlength="11" required id="id_cpf"></td></tr>
+<tr><th><label for="id_mit_bal">Limite de crédito:</label></th><td><input type="number" name="mit_bal" value="10000" required id="id_mit_bal"></td></tr>
+<tr><th><label for="id_sex">Gênero:</label></th><td><select name="sex" required id="id_sex">
+  <option value="">---------</option>
+
+  <option value="1" selected>Masculino</option>
+
+  <option value="2">Feminino</option>
+
+</select></td></tr>
+<tr><th><label for="id_education">Grau de Instrução:</label></th><td><select name="education" required id="id_education">
+  <option value="">---------</option>
+
+  <option value="3" selected>Ensino Médio Completo</option>
+
+  <option value="2">Superior Completo</option>
+
+  <option value="1">Pós Graduado</option>
+
+  <option value="4">Outros</option>
+
+</select></td></tr>
+<tr><th><label for="id_marriage">Estado Civil:</label></th><td><select name="marriage" required id="id_marriage">
+  <option value="">---------</option>
+
+  <option value="2" selected>Solteiro(a)</option>
+
+  <option value="1">Casado(a)</option>
+
+  <option value="3">Outros</option>
+
+</select></td></tr>
+<tr><th><label for="id_age">Idade:</label></th><td><ul class="errorlist"><li>Este campo é obrigatório.</li></ul><input type="number" name="age" required id="id_age"></td></tr>
+<tr><th><label for="id_pay_1">Status de Pagamento 6:</label></th><td><select name="pay_1" required id="id_pay_1">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7" selected>7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_2">Status de Pagamento 5:</label></th><td><select name="pay_2" required id="id_pay_2">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7" selected>7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_3">Status de Pagamento 4:</label></th><td><select name="pay_3" required id="id_pay_3">
+  <option value="">---------</option>
+
+  <option value="10" selected>Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_4">Status de Pagamento 3:</label></th><td><select name="pay_4" required id="id_pay_4">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2" selected>2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_5">Status de Pagamento 2:</label></th><td><select name="pay_5" required id="id_pay_5">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11" selected>Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_6">Status de Pagamento 1:</label></th><td><select name="pay_6" required id="id_pay_6">
+  <option value="">---------</option>
+
+  <option value="10" selected>Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_bill_amt_1">Valor da Conta 6:</label></th><td><input type="number" name="bill_amt_1" value="100" required id="id_bill_amt_1"></td></tr>
+<tr><th><label for="id_bill_amt_2">Valor da Conta 5:</label></th><td><input type="number" name="bill_amt_2" value="100" required id="id_bill_amt_2"></td></tr>
+<tr><th><label for="id_bill_amt_3">Valor da Conta 4:</label></th><td><input type="number" name="bill_amt_3" value="100" required id="id_bill_amt_3"></td></tr>
+<tr><th><label for="id_bill_amt_4">Valor da Conta 3:</label></th><td><input type="number" name="bill_amt_4" value="100" required id="id_bill_amt_4"></td></tr>
+<tr><th><label for="id_bill_amt_5">Valor da Conta 2:</label></th><td><input type="number" name="bill_amt_5" value="100" required id="id_bill_amt_5"></td></tr>
+<tr><th><label for="id_bill_amt_6">Valor da Conta 1:</label></th><td><input type="number" name="bill_amt_6" value="100" required id="id_bill_amt_6"></td></tr>
+<tr><th><label for="id_pay_amt_1">Pagamento 6:</label></th><td><input type="number" name="pay_amt_1" value="100" required id="id_pay_amt_1"></td></tr>
+<tr><th><label for="id_pay_amt_2">Pagamento 5:</label></th><td><input type="number" name="pay_amt_2" value="100" required id="id_pay_amt_2"></td></tr>
+<tr><th><label for="id_pay_amt_3">Pagamento 4:</label></th><td><input type="number" name="pay_amt_3" value="100" required id="id_pay_amt_3"></td></tr>
+<tr><th><label for="id_pay_amt_4">Pagamento 3:</label></th><td><input type="number" name="pay_amt_4" value="100" required id="id_pay_amt_4"></td></tr>
+<tr><th><label for="id_pay_amt_5">Pagamento 2:</label></th><td><input type="number" name="pay_amt_5" value="100" required id="id_pay_amt_5"></td></tr>
+<tr><th><label for="id_pay_amt_6">Pagamento 1:</label></th><td><input type="number" name="pay_amt_6" value="100" required id="id_pay_amt_6"></td></tr>
+<tr><th><label for="id_payment">Próximo Pagamento:</label></th><td><select name="payment" required id="id_payment">
+  <option value="">---------</option>
+
+  <option value="1">Adimplente</option>
+
+  <option value="0" selected>Inadimplente</option>
+
+</select></td></tr>
+DEBUG:root:<tr><th><label for="id_nomec">Nome Completo:</label></th><td><input type="text" name="nomec" value="IGOR OFRANTE DUTRA" required id="id_nomec"></td></tr>
+<tr><th><label for="id_cpf">CPF:</label></th><td><input type="text" name="cpf" value="151.559.547-11" maxlength="14" minlength="11" required id="id_cpf"></td></tr>
+<tr><th><label for="id_mit_bal">Limite de crédito:</label></th><td><input type="number" name="mit_bal" value="10000" required id="id_mit_bal"></td></tr>
+<tr><th><label for="id_sex">Gênero:</label></th><td><select name="sex" required id="id_sex">
+  <option value="">---------</option>
+
+  <option value="1" selected>Masculino</option>
+
+  <option value="2">Feminino</option>
+
+</select></td></tr>
+<tr><th><label for="id_education">Grau de Instrução:</label></th><td><select name="education" required id="id_education">
+  <option value="">---------</option>
+
+  <option value="3" selected>Ensino Médio Completo</option>
+
+  <option value="2">Superior Completo</option>
+
+  <option value="1">Pós Graduado</option>
+
+  <option value="4">Outros</option>
+
+</select></td></tr>
+<tr><th><label for="id_marriage">Estado Civil:</label></th><td><select name="marriage" required id="id_marriage">
+  <option value="">---------</option>
+
+  <option value="2" selected>Solteiro(a)</option>
+
+  <option value="1">Casado(a)</option>
+
+  <option value="3">Outros</option>
+
+</select></td></tr>
+<tr><th><label for="id_age">Idade:</label></th><td><input type="number" name="age" value="20" required id="id_age"></td></tr>
+<tr><th><label for="id_pay_1">Status de Pagamento 6:</label></th><td><select name="pay_1" required id="id_pay_1">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1" selected>1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_2">Status de Pagamento 5:</label></th><td><select name="pay_2" required id="id_pay_2">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8" selected>8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_3">Status de Pagamento 4:</label></th><td><select name="pay_3" required id="id_pay_3">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11" selected>Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_4">Status de Pagamento 3:</label></th><td><select name="pay_4" required id="id_pay_4">
+  <option value="">---------</option>
+
+  <option value="10">Pagamento Integral</option>
+
+  <option value="11" selected>Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_5">Status de Pagamento 2:</label></th><td><select name="pay_5" required id="id_pay_5">
+  <option value="">---------</option>
+
+  <option value="10" selected>Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_pay_6">Status de Pagamento 1:</label></th><td><select name="pay_6" required id="id_pay_6">
+  <option value="">---------</option>
+
+  <option value="10" selected>Pagamento Integral</option>
+
+  <option value="11">Pagamento Parcial</option>
+
+  <option value="1">1 mês de atraso</option>
+
+  <option value="2">2 meses de atraso</option>
+
+  <option value="3">3 meses de atraso</option>
+
+  <option value="4">4 meses de atraso</option>
+
+  <option value="5">5 meses de atraso</option>
+
+  <option value="6">6 meses de atraso</option>
+
+  <option value="7">7 meses de atraso</option>
+
+  <option value="8">8 meses de atraso</option>
+
+  <option value="9">9 ou mais meses de atraso</option>
+
+</select></td></tr>
+<tr><th><label for="id_bill_amt_1">Valor da Conta 6:</label></th><td><input type="number" name="bill_amt_1" value="100" required id="id_bill_amt_1"></td></tr>
+<tr><th><label for="id_bill_amt_2">Valor da Conta 5:</label></th><td><input type="number" name="bill_amt_2" value="100" required id="id_bill_amt_2"></td></tr>
+<tr><th><label for="id_bill_amt_3">Valor da Conta 4:</label></th><td><input type="number" name="bill_amt_3" value="100" required id="id_bill_amt_3"></td></tr>
+<tr><th><label for="id_bill_amt_4">Valor da Conta 3:</label></th><td><input type="number" name="bill_amt_4" value="100" required id="id_bill_amt_4"></td></tr>
+<tr><th><label for="id_bill_amt_5">Valor da Conta 2:</label></th><td><input type="number" name="bill_amt_5" value="100" required id="id_bill_amt_5"></td></tr>
+<tr><th><label for="id_bill_amt_6">Valor da Conta 1:</label></th><td><input type="number" name="bill_amt_6" value="100" required id="id_bill_amt_6"></td></tr>
+<tr><th><label for="id_pay_amt_1">Pagamento 6:</label></th><td><input type="number" name="pay_amt_1" value="100" required id="id_pay_amt_1"></td></tr>
+<tr><th><label for="id_pay_amt_2">Pagamento 5:</label></th><td><input type="number" name="pay_amt_2" value="100" required id="id_pay_amt_2"></td></tr>
+<tr><th><label for="id_pay_amt_3">Pagamento 4:</label></th><td><input type="number" name="pay_amt_3" value="100" required id="id_pay_amt_3"></td></tr>
+<tr><th><label for="id_pay_amt_4">Pagamento 3:</label></th><td><input type="number" name="pay_amt_4" value="100" required id="id_pay_amt_4"></td></tr>
+<tr><th><label for="id_pay_amt_5">Pagamento 2:</label></th><td><input type="number" name="pay_amt_5" value="100" required id="id_pay_amt_5"></td></tr>
+<tr><th><label for="id_pay_amt_6">Pagamento 1:</label></th><td><input type="number" name="pay_amt_6" value="100" required id="id_pay_amt_6"></td></tr>
+<tr><th><label for="id_payment">Próximo Pagamento:</label></th><td><select name="payment" required id="id_payment">
+  <option value="">---------</option>
+
+  <option value="1">Adimplente</option>
+
+  <option value="0" selected>Inadimplente</option>
+
+</select></td></tr>

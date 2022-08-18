@@ -23,6 +23,7 @@ urlpatterns = [
     path('',views.index),
     path('dashboard/',views.dashboardIndex),
     path('client/',views.clienteIndex),
+    path('client/form',views.clienteForm),
     path('initialize/',views.initialize),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]
