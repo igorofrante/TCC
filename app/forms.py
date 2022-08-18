@@ -37,3 +37,17 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = '__all__'
+
+def validate_file_extension(value):
+    import os
+    from django.core.exceptions import ValidationError
+    ext = os.path.splitext(value.name)[1]  
+    valid_extensions = ['.csv', '.txt']
+    if not ext.lower() in valid_extensions:
+        raise ValidationError('Extensão inválida')
+
+
+
+class ClienteFile(forms.Form):
+    file = forms.FileField(label="Selecione o arquivo de texto",validators=[validate_file_extension])
+

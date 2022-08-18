@@ -5,8 +5,11 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 
-df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
-df = df.drop(["id","nomec","cpf"], axis=1)
+try:
+    df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
+    df = df.drop(["id","nomec","cpf"], axis=1)
+except:
+    pass
 
 def startNN():
 
@@ -107,3 +110,6 @@ def dashboard():
     # def callback_size(dropdown_color, dropdown_size):
     #     return "The chosen T-shirt is a %s %s one." %(dropdown_size,
     #                                                 dropdown_color)
+
+
+
