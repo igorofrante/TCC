@@ -25,6 +25,7 @@ urlpatterns = [
     path('client/',views.clienteIndex),
     path('client/form',views.clienteForm),
     path('client/file',views.clienteFile),
+    path('cliente/ajax',views.clientePreview),
     path('initialize/',views.initialize),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]

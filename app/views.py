@@ -5,6 +5,7 @@ from app.models import *
 from app.data import *
 from app.file import *
 import logging
+import json
 
 
 # Create your views here.
@@ -39,6 +40,14 @@ def clienteFile(request):
     else:
         form = ClienteFile()
     return render(request,'file.html',{'form':form})
+
+def clientePreview(request):
+    logging.basicConfig(filename='mylog.log', level=logging.DEBUG)
+    logging.debug(request)
+    values = json.loads(request.GET.get('values'))
+    print(values)
+    resultado = predict(values)
+    return render(request, 'ajax.html', {'resultado': resultado})
 
 def initialize(request):
     result = startNN()

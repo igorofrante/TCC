@@ -8,6 +8,8 @@ from sklearn.neural_network import MLPClassifier
 try:
     df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
     df = df.drop(["id","nomec","cpf"], axis=1)
+    scaler = MinMaxScaler()
+    clf = [0,0]
 except:
     pass
 
@@ -22,11 +24,12 @@ def startNN():
 
     #escalagem dos dados
     cols = range(0,23)
-    scaler = MinMaxScaler()
+    
 
     for data in datas:
-        for i in cols:
-            data[data.columns[i]] = scaler.fit_transform(data[data.columns[i]].values.reshape(-1, 1))
+        # for i in cols:
+        #     data[data.columns[i]] = scaler.fit_transform(data[data.columns[i]].values.reshape(-1, 1))
+        data[data.columns[cols]] = scaler.fit_transform(data[data.columns[cols]])
 
 
 
@@ -40,10 +43,15 @@ def startNN():
         X_train, X_test, y_train, y_test = train_test_split(features, label, test_size=0.3, random_state=1)
         model = MLPClassifier(alpha=0.05,hidden_layer_sizes=(12,6,2),activation='tanh', max_iter=250, random_state=1)
         model.fit(X_train.values,y_train.values)
+        clf[i]=model
         result[i] = model.score(X_test.values,y_test.values)
         i+=1
 
     return result
+
+def predict(values):
+    print("2")
+    return (0)
 
 
 from dash import dcc, html
@@ -84,13 +92,13 @@ def dashboard():
         html.Div([ ### FIGURES Divs
             html.Div([
                 dcc.Graph(figure = fig0),
-            ], className = 'col-8'),
+            ], className = 'col-sm'),
             html.Div([
                 dcc.Graph(figure = fig1),
-            ], className = 'col-8'),
+            ], className = 'col-sm'),
             html.Div([
                 dcc.Graph(figure = fig2),
-            ], className = 'col-8')
+            ], className = 'col-sm')
         ], className = 'row')
         
         ])
