@@ -8,15 +8,21 @@ function ajaxe() {
 
    url = "/cliente/ajax"
 
-   $.ajax({
-    url: url,
-    data: {
-      values : JSON.stringify(values)
-    },
-    success: function (data) {
-        $("#id_payment " + "option[value=" +  data + "]").attr("selected", "selected");
-      }
-    });
+  
+   if (!values.includes('')) {
+    $.ajax({
+      url: url,
+      data: {
+        values : JSON.stringify(values)
+      },
+      success: function (data) {
+          $("#id_payment " + "option[value=" +  data + "]").attr("selected", "selected");
+        }
+      });
+   }else{
+    alert('Há campos vazios, favor preencher todos os campos antes de utilizar a função estimar!')
+   }
+   
    
 
     }

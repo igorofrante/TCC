@@ -1,5 +1,6 @@
 import pandas as pd
 import pymysql
+import numpy as np
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -50,8 +51,16 @@ def startNN():
     return result
 
 def predict(values):
-    print("2")
-    return (0)
+    if hasattr(scaler, "n_features_in_"):
+        values = scaler.transform(np.reshape(values,(1,-1)))
+        res = clf[0].predict(values)
+    else:
+        startNN()
+        values = scaler.transform(np.reshape(values,(1,-1)))
+        res = clf[0].predict(values)
+    
+    
+    return (res[0])
 
 
 from dash import dcc, html

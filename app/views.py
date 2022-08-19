@@ -45,8 +45,8 @@ def clientePreview(request):
     logging.basicConfig(filename='mylog.log', level=logging.DEBUG)
     logging.debug(request)
     values = json.loads(request.GET.get('values'))
-    print(values)
     resultado = predict(values)
+    print(resultado)
     return render(request, 'ajax.html', {'resultado': resultado})
 
 def initialize(request):
