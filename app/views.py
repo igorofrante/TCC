@@ -10,8 +10,11 @@ import json
 
 # Create your views here.
 
+
+
 def index(request):
-    return render(request, 'index.html')
+    result = returnresult()
+    return render(request, 'index.html',{'result0': result[0],'result1':result[1]})
 
 def dashboardIndex(request):
     dashboard()
@@ -46,10 +49,10 @@ def clientePreview(request):
     logging.debug(request)
     values = json.loads(request.GET.get('values'))
     resultado = predict(values)
-    print(resultado)
     return render(request, 'ajax.html', {'resultado': resultado})
 
 def initialize(request):
-    result = startNN()
+    startNN()
+    result = returnresult()
     return render(request,'index.html',{'result0': result[0],'result1':result[1]})
 

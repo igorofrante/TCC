@@ -11,6 +11,7 @@ try:
     df = df.drop(["id","nomec","cpf"], axis=1)
     scaler = MinMaxScaler()
     clf = [0,0]
+    result = [0,0]
 except:
     pass
 
@@ -35,7 +36,6 @@ def startNN():
 
 
     #classificador
-    result = [0,0]
     i=0   
 
     for data in datas:
@@ -48,7 +48,11 @@ def startNN():
         result[i] = model.score(X_test.values,y_test.values)
         i+=1
 
+
+def returnresult():
+    pass
     return result
+
 
 def predict(values):
     if hasattr(scaler, "n_features_in_"):
@@ -58,8 +62,6 @@ def predict(values):
         startNN()
         values = scaler.transform(np.reshape(values,(1,-1)))
         res = clf[0].predict(values)
-    
-    
     return (res[0])
 
 
