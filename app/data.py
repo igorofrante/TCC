@@ -1,3 +1,6 @@
+from cProfile import label
+from pydoc import classname
+from turtle import title
 import pandas as pd
 import pymysql
 from imblearn.over_sampling import SMOTE
@@ -25,8 +28,6 @@ def startNN():
         for i in cols:
             data[data.columns[i]] = scaler.fit_transform(data[data.columns[i]].values.reshape(-1, 1))
 
-
-
     #classificador
     result = [0,0]
     i=0   
@@ -46,7 +47,7 @@ def startNN():
 import dash
 from dash import dcc, html
 from django_plotly_dash import DjangoDash
-from dash import Dash, dcc, html, Input, Output
+from dash import Dash, Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -61,39 +62,54 @@ def newLegend(fig, newNames):
 
 def dashboard():
     
-    app = DjangoDash('dashboard')   # replaces dash.Dash
+    app = DjangoDash('dashboard', add_bootstrap_links=True)   # replaces dash.Dash
 
     fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
     fig0.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig0.update_layout(title_text="Gênero",autosize=False, width=500, height=500)
+    fig0.update_layout(title_text="Gênero",autosize=False, title_x=0.5, width=500, height=500)
     fig0 = newLegend(fig0,{"1": "Feminino", "2": "Masculino"})
 
     fig1 = go.Figure(data=[go.Pie(labels=df['education'])])
     fig1.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig1.update_layout(title_text="Educação",autosize=False, width=500, height=500)
+    fig1.update_layout(title_text="Educação",autosize=False, title_x=0.5, width=500, height=500)
     fig1 = newLegend(fig1,{"1": "Pós Graduado", "2": "Graduado","3": "Ensino Médio","4": "Outros"})
 
     fig2 = go.Figure(data=[go.Pie(labels=df['marriage'])])
     fig2.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig2.update_layout(title_text="Estado Civil",autosize=False, width=500, height=500)
+    fig2.update_layout(title_text="Estado Civil",autosize=False, title_x=0.5, width=500, height=500)
     fig2 = newLegend(fig2,{"1": "Casado", "2": "Solteiro","3": "Outros"})
+
+    fig3 = go.Figure()
+    fig3.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 0], name='Adimplente'))
+    fig3.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 1], name='Inadimplente'))
+    fig3.update_layout(barmode='overlay', title_text="Pagamentos por Faixa Etária", xaxis_title_text='Faixa Etária', yaxis_title_text='Contagem', title_x=0.5)
 
 
     app.layout = html.Div([ #MAIN DIV
+            html.Div([
+                html.H1(['Análise dos Dados'], style={'textAlign': 'center', 'padding-top':'7 px'})
+            ]),
+
+              html.Div([ ### FIGURES Divs
+                html.Div([
+                    dcc.Graph(figure = fig0),
+                ], className = 'col-sm'),
+                html.Div([
+                    dcc.Graph(figure = fig1),
+                ], className = 'col-sm'),
+                html.Div([
+                    dcc.Graph(figure = fig2),
+                ], className = 'col-sm'),
                
-        html.Div([ ### FIGURES Divs
-            html.Div([
-                dcc.Graph(figure = fig0),
-            ], className = 'col-sm'),
-            html.Div([
-                dcc.Graph(figure = fig1),
-            ], className = 'col-sm'),
-            html.Div([
-                dcc.Graph(figure = fig2),
-            ], className = 'col-sm')
-        ], className = 'row')
-        
-        ])
+            ], className = 'row'),
+
+             html.Div([ ### FIGURES Divs
+                 html.Div([
+                    dcc.Graph(figure = fig3),
+                ], className = 'col-sm'),
+            ], className = 'row'),
+
+        ], className='main')
     
     #app.run_server(debug=True)
 

@@ -5,8 +5,14 @@
     {% include 'head.html' %}
 <body>
     {% include 'navbar.html' %}
-    <a href="/initialize"><button>Iniciar</button></a>
-    <p>Padrão: {{ result0 }}</p>
-    <p>OverSample: {{ result1 }}</p>
+    <div id="main-index">
+        <div id="index">
+            <h2>Execução da Rede Neural</h2><br>
+            <p>Padrão: {{ result0 }}</p>
+            <p>OverSample: {{ result1 }}</p>
+            <a href="/initialize"><button id="button-index">Iniciar</button></a>
+        </div>
+    </div>
+    
 </body>
 </html>

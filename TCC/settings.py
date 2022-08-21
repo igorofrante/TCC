@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
-    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -87,8 +86,8 @@ DATABASES = {
         'USER':'root',
         'PASSWORD':'123456',
         'HOST':'localhost',
-        'PORT':'3306'
-    },
+        'PORT':'3306',
+    }
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': 'b6pynxztpmh2ip1zilgs',
