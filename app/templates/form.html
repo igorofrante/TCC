@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include 'head.html' %}
+<body>
+    {% include 'navbar.html' %}
+
+ <form action="" method="post">
+    {% csrf_token %}
+
+    <p>{{ form.nomec.label }} {{ form.nomec }} {{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }}</p>
+    <p>{{ form.age.label }} {{ form.age }} {{ form.education.label }} {{ form.education }} {{ form.marriage.label }} {{ form.marriage }}</p>
+    <p>{{ form.mit_bal.label }} {{ form.mit_bal }}</p>
+    <p>{{ form.pay_amt_6.label }} {{ form.pay_amt_6 }} {{ form.pay_6.label }} {{ form.pay_6 }}</p>
+    <p>{{ form.bill_amt_6.label }} {{ form.bill_amt_6 }} {{ form.pay_amt_5.label }} {{ form.pay_amt_5 }} {{ form.pay_5.label }} {{ form.pay_5 }}</p>
+    <p>{{ form.bill_amt_5.label }} {{ form.bill_amt_5 }} {{ form.pay_amt_4.label }} {{ form.pay_amt_4 }} {{ form.pay_4.label }} {{ form.pay_4 }}</p>
+    <p>{{ form.bill_amt_4.label }} {{ form.bill_amt_4 }} {{ form.pay_amt_3.label }} {{ form.pay_amt_3 }} {{ form.pay_3.label }} {{ form.pay_3 }}</p>
+    <p>{{ form.bill_amt_3.label }} {{ form.bill_amt_3 }} {{ form.pay_amt_2.label }} {{ form.pay_amt_2 }} {{ form.pay_2.label }} {{ form.pay_2 }}</p>
+    <p>{{ form.bill_amt_2.label }} {{ form.bill_amt_2 }} {{ form.pay_amt_1.label }} {{ form.pay_amt_1 }} {{ form.pay_1.label }} {{ form.pay_1 }}</p>
+    <p>{{ form.bill_amt_1.label }} {{ form.bill_amt_1 }}</p>
+    
+    <p>{{ form.payment.label }} {{ form.payment }}</p>
+    
+    <p>
+        <input type="submit" class="btn btn-primary mt-3" value="Confirmar">
+        <a href="/client/" class="btn btn-danger mt-3">Cancelar</a>  
+    </p>
+
+     
+ </form>  
+
+ <p><button class="btn btn-info" onclick="ajaxe()">Estimar</button></p>
+
+</body>
+</html>

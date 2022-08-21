@@ -1,0 +1,183 @@
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values%5B%5D=1000&values%5B%5D=1&values%5B%5D=3&values%5B%5D=&values%5B%5D=20&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D='>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values%5B%5D=1000&values%5B%5D=1&values%5B%5D=3&values%5B%5D=&values%5B%5D=20&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=10&values%5B%5D=1&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=1&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=&values%5B%5D=1'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=1'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=1000'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%2C%22%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 53, in predict
+    values = scaler.transform(values)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\preprocessing\_data.py", line 497, in transform
+    check_is_fitted(self)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 1345, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This MinMaxScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 53, in predict
+    values = scaler.transform(values)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\preprocessing\_data.py", line 499, in transform
+    X = self._validate_data(
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\base.py", line 577, in _validate_data
+    X = check_array(X, input_name="X", **check_params)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 879, in check_array
+    raise ValueError(
+ValueError: Expected 2D array, got 1D array instead:
+array=[1000.    1.    3.    2.   20.   10.   10.   10.   10.   10.   10.  140.
+  130.  120.  100.  100.  100.  120.  100.  110.  100.  100.  100.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 53, in predict
+    values = scaler.transform(values.reshape(1,-1))
+AttributeError: 'list' object has no attribute 'reshape'
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 54, in predict
+    values = scaler.transform(values.values.reshape(1,-1))
+AttributeError: 'list' object has no attribute 'values'
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 54, in predict
+    values = scaler.transform(values.reshape(1,-1))
+AttributeError: 'list' object has no attribute 'reshape'
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 54, in predict
+    values = scaler.transform(np.reshape(values,(1,-1))
+NameError: name 'values1' is not defined
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 49, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 54, in predict
+    values = scaler.transform(np.reshape(values,(1,-1)))
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\preprocessing\_data.py", line 497, in transform
+    check_is_fitted(self)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 1345, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This MinMaxScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2211%22%2C%2211%22%2C%223%22%2C%223%22%2C%221%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 48, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 54, in predict
+    values = scaler.transform(np.reshape(values,(1,-1)))
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\preprocessing\_data.py", line 497, in transform
+    check_is_fitted(self)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 1345, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This MinMaxScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%223%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2220%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%22100%22%2C%22120%22%2C%22100%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%22100%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2240%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%221200%22%2C%22120%22%2C%22101%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%221000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2240%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%221200%22%2C%22120%22%2C%22101%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%221000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2240%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%221200%22%2C%22120%22%2C%22101%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%221000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2240%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%221200%22%2C%22120%22%2C%22101%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%221000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2240%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%221200%22%2C%22120%22%2C%22101%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%221000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%221000%22%2C%221%22%2C%222%22%2C%222%22%2C%2240%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2211%22%2C%2210%22%2C%22140%22%2C%22130%22%2C%22120%22%2C%22100%22%2C%22100%22%2C%221200%22%2C%22120%22%2C%22101%22%2C%22110%22%2C%22100%22%2C%22100%22%2C%221000%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\forms.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%2210000%22%2C%221%22%2C%224%22%2C%223%22%2C%2250%22%2C%221%22%2C%228%22%2C%226%22%2C%2210%22%2C%2211%22%2C%228%22%2C%229000%22%2C%228000%22%2C%228000%22%2C%227500%22%2C%228000%22%2C%227586%22%2C%228000%22%2C%225000%22%2C%227500%22%2C%228000%22%2C%225000%22%2C%228000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%2210000%22%2C%222%22%2C%224%22%2C%223%22%2C%2250%22%2C%221%22%2C%228%22%2C%226%22%2C%2210%22%2C%2211%22%2C%228%22%2C%229000%22%2C%228000%22%2C%228000%22%2C%227500%22%2C%228000%22%2C%227586%22%2C%228000%22%2C%225000%22%2C%227500%22%2C%228000%22%2C%225000%22%2C%228000%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%2210000%22%2C%222%22%2C%224%22%2C%223%22%2C%2250%22%2C%221%22%2C%228%22%2C%226%22%2C%2210%22%2C%2211%22%2C%228%22%2C%229000%22%2C%228000%22%2C%228000%22%2C%227500%22%2C%228000%22%2C%227586%22%2C%228000%22%2C%225000%22%2C%227500%22%2C%228000%22%2C%225000%22%2C%228000%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%220%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%220%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%2250%22%5D'>
+ERROR:django.request:Internal Server Error: /cliente/ajax
+Traceback (most recent call last):
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\igoro\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py", line 51, in clientePreview
+    resultado = predict(values)
+  File "C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py", line 61, in predict
+    res = clf[0].predict(values)
+AttributeError: 'int' object has no attribute 'predict'
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%220%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\data.py changed, reloading.
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%2250%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%2250%22%5D'>
+DEBUG:root:<WSGIRequest: GET '/cliente/ajax?values=%5B%22260000%22%2C%222%22%2C%221%22%2C%222%22%2C%2251%22%2C%224%22%2C%2211%22%2C%228%22%2C%2210%22%2C%2211%22%2C%2210%22%2C%2270000%22%2C%2260000%22%2C%2254000%22%2C%2252000%22%2C%2223589%22%2C%2215000%22%2C%2250000%22%2C%2232000%22%2C%2240000%22%2C%2223589%22%2C%2210000%22%2C%2250%22%5D'>
+INFO:django.utils.autoreload:C:\Users\igoro\OneDrive\Documentos\GitHub\TCC\app\views.py changed, reloading.
