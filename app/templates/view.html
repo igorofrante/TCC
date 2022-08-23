@@ -20,7 +20,7 @@
                 <p>{{ form.bill_amt_1.label }} {{ form.bill_amt_1 }}</p>
                 <p>{{ form.payment.label }} {{ form.payment }}</p>
                 <div id="confirmar">
-                    <a href="/client/form/<int:id>" class="btn btn-secondary mt-3">Editar</a> 
+                    <a href="/client/form/{{ form.instance.id }}" class="btn btn-secondary mt-3">Editar</a> 
                     <a href="/client/table" class="btn btn-danger mt-3">Voltar</a>
                 </div>
           
