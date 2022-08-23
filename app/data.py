@@ -87,11 +87,10 @@ def newLegend(fig, newNames):
     return(fig)
 
 def dashboard():
-
     
     app = DjangoDash('dashboard', add_bootstrap_links=True)   # replaces dash.Dash
 
-    app = DjangoDash('main', add_bootstrap_links=True)   # replaces dash.Dash
+    # app = DjangoDash('main', add_bootstrap_links=True)   # replaces dash.Dash
 
 
     fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
@@ -101,11 +100,8 @@ def dashboard():
 
     fig1 = go.Figure(data=[go.Pie(labels=df['education'])])
     fig1.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-
     fig1.update_layout(title_text="Educação",autosize=False, title_x=0.5, width=500, height=500)
-
     fig1.update_layout(title_text="Grau de Instrução",autosize=False, width=500, height=500)
-
     fig1 = newLegend(fig1,{"1": "Pós Graduado", "2": "Graduado","3": "Ensino Médio","4": "Outros"})
 
     fig2 = go.Figure(data=[go.Pie(labels=df['marriage'])])
@@ -113,12 +109,10 @@ def dashboard():
     fig2.update_layout(title_text="Estado Civil",autosize=False, title_x=0.5, width=500, height=500)
     fig2 = newLegend(fig2,{"1": "Casado", "2": "Solteiro","3": "Outros"})
 
-
     fig3 = go.Figure()
     fig3.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 0], name='Adimplente'))
     fig3.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 1], name='Inadimplente'))
     fig3.update_layout(barmode='overlay', title_text="Pagamentos por Faixa Etária", xaxis_title_text='Faixa Etária', yaxis_title_text='Contagem', title_x=0.5)
-
 
     fig4 = go.Figure(data=[go.Pie(labels=df['payment'])])
     fig4.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)

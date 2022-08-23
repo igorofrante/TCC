@@ -3,15 +3,9 @@
 {% include 'head.html' %}
 
 <body>
-<<<<<<< HEAD
+
     {% include 'navbar.html' %}
     {%load plotly_dash%}
-=======
-{% include 'navbar.html' %}
-{%load plotly_dash%}
-
-{%plotly_app name='main' ratio=1 %}
->>>>>>> d9fc023620d3b5eddae5092d1ff7ef1c9920d032
 
     <div id="main-dash">{%plotly_app name="dashboard" ratio=1 %}</div>
 </body>
