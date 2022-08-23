@@ -21,7 +21,12 @@ def dashboardIndex(request):
     return render(request,'dashboard.html')
 
 def clienteIndex(request):
+    pass
     return render(request,'client.html')
+
+def clienteTable(request):
+    clientes = Cliente.objects.all().only('nomec','cpf')
+    return render(request,'table.html',{'clientes':clientes})
 
 def clienteForm(request):
     if request.method == 'POST':
@@ -31,6 +36,18 @@ def clienteForm(request):
             return redirect('/client')
     else:
         form = ClienteForm()
+    return render(request,'form.html',{'form':form})
+
+def clienteFormUpdate(request,id):
+    cliente = Cliente.objects.get(id=id)
+    
+    if request.method == 'POST':
+        form = ClienteForm(request.POST,instance=cliente)
+        if form.is_valid():
+            form.save()
+            return redirect('/client/table')
+    else:
+        form = ClienteForm(instance=cliente)
     return render(request,'form.html',{'form':form})
 
 def clienteFile(request):

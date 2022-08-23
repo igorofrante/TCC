@@ -29,6 +29,6 @@ class Cliente(models.Model):
     pay_amt_4 = models.IntegerField()
     pay_amt_5 = models.IntegerField()
     pay_amt_6 = models.IntegerField()
-    payment = models.BooleanField()
+    payment = models.SmallIntegerField()
     class Meta:
         db_table = "cliente"  

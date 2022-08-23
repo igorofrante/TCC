@@ -90,8 +90,6 @@ def dashboard():
     
     app = DjangoDash('dashboard', add_bootstrap_links=True)   # replaces dash.Dash
 
-    # app = DjangoDash('main', add_bootstrap_links=True)   # replaces dash.Dash
-
 
     fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
     fig0.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
@@ -109,15 +107,17 @@ def dashboard():
     fig2.update_layout(title_text="Estado Civil",autosize=False, title_x=0.5, width=500, height=500)
     fig2 = newLegend(fig2,{"1": "Casado", "2": "Solteiro","3": "Outros"})
 
-    fig3 = go.Figure()
-    fig3.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 0], name='Adimplente'))
-    fig3.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 1], name='Inadimplente'))
-    fig3.update_layout(barmode='overlay', title_text="Pagamentos por Faixa Etária", xaxis_title_text='Faixa Etária', yaxis_title_text='Contagem', title_x=0.5)
+    fig3 = go.Figure(data=[go.Pie(labels=df['payment'])])
+    fig3.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
+    fig3.update_layout(title_text="Clientes",autosize=False, width=500, height=500)
+    fig3 = newLegend(fig3,{"0": "Adimplentes", "1": "Inadimplentes"})
 
-    fig4 = go.Figure(data=[go.Pie(labels=df['payment'])])
-    fig4.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig4.update_layout(title_text="Clientes",autosize=False, width=500, height=500)
-    fig4 = newLegend(fig4,{"0": "Adimplentes", "1": "Inadimplentes"})
+    fig4 = go.Figure()
+    fig4.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 0], name='Adimplente'))
+    fig4.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 1], name='Inadimplente'))
+    fig4.update_layout(barmode='overlay', title_text="Pagamentos por Faixa Etária", xaxis_title_text='Faixa Etária', yaxis_title_text='Contagem', title_x=0.5)
+
+    
 
 
     app.layout = html.Div([ #MAIN DIV
@@ -135,11 +135,14 @@ def dashboard():
                 html.Div([
                     dcc.Graph(figure = fig2),
                 ], className = 'col-sm'),
+                html.Div([
+                    dcc.Graph(figure = fig3),
+                ], className = 'col-sm'),
             ], className = 'row'),
 
             html.Div([ ### FIGURES Divs
                  html.Div([
-                    dcc.Graph(figure = fig3),
+                    dcc.Graph(figure = fig4),
                 ], className = 'col-sm'),
             ], className = 'row'),
 
