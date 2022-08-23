@@ -38,6 +38,18 @@ class ClienteForm(forms.ModelForm):
         model = Cliente
         fields = '__all__'
 
+class ClienteView(ClienteForm):
+    pass
+    def __init__(self, *args, **kwargs):
+        super(ClienteView, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs['readonly'] = True
+
+
+
+
+    
+
 def validate_file_extension(value):
     import os
     from django.core.exceptions import ValidationError

@@ -40,7 +40,7 @@ def clienteForm(request):
 
 def clienteFormUpdate(request,id):
     cliente = Cliente.objects.get(id=id)
-    
+
     if request.method == 'POST':
         form = ClienteForm(request.POST,instance=cliente)
         if form.is_valid():
@@ -49,6 +49,11 @@ def clienteFormUpdate(request,id):
     else:
         form = ClienteForm(instance=cliente)
     return render(request,'form.html',{'form':form})
+
+def clienteView(request,id):
+    cliente = Cliente.objects.get(id=id)
+    form = ClienteView(instance=cliente)
+    return render(request,'view.html',{'form':form})
 
 def clienteFile(request):
     if request.method == 'POST':

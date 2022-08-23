@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include 'head.html' %}
+<body>
+    {% include 'navbar.html' %}
+
+    <div id="main-form">
+
+        <div id="form">
+            <h1>Cliente</h1>
+                <p>{{ form.nomec.label }} {{ form.nomec }} {{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }}</p>
+                <p>{{ form.age.label }} {{ form.age }} {{ form.education.label }} {{ form.education }} {{ form.marriage.label }} {{ form.marriage }}</p>
+                <p>{{ form.mit_bal.label }} {{ form.mit_bal }}</p>
+                <p>{{ form.pay_amt_6.label }} {{ form.pay_amt_6 }} {{ form.pay_6.label }} {{ form.pay_6 }}</p>
+                <p>{{ form.bill_amt_6.label }} {{ form.bill_amt_6 }} {{ form.pay_amt_5.label }} {{ form.pay_amt_5 }} {{ form.pay_5.label }} {{ form.pay_5 }}</p>
+                <p>{{ form.bill_amt_5.label }} {{ form.bill_amt_5 }} {{ form.pay_amt_4.label }} {{ form.pay_amt_4 }} {{ form.pay_4.label }} {{ form.pay_4 }}</p>
+                <p>{{ form.bill_amt_4.label }} {{ form.bill_amt_4 }} {{ form.pay_amt_3.label }} {{ form.pay_amt_3 }} {{ form.pay_3.label }} {{ form.pay_3 }}</p>
+                <p>{{ form.bill_amt_3.label }} {{ form.bill_amt_3 }} {{ form.pay_amt_2.label }} {{ form.pay_amt_2 }} {{ form.pay_2.label }} {{ form.pay_2 }}</p>
+                <p>{{ form.bill_amt_2.label }} {{ form.bill_amt_2 }} {{ form.pay_amt_1.label }} {{ form.pay_amt_1 }} {{ form.pay_1.label }} {{ form.pay_1 }}</p>
+                <p>{{ form.bill_amt_1.label }} {{ form.bill_amt_1 }}</p>
+                <p>{{ form.payment.label }} {{ form.payment }}</p>
+                <div id="confirmar">
+                    <a href="/client/form/<int:id>" class="btn btn-secondary mt-3">Editar</a> 
+                    <a href="/client/table" class="btn btn-danger mt-3">Voltar</a>
+                </div>
+          
+        </div>
+    </div>
+
+
+</body>
+</html>

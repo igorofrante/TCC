@@ -25,6 +25,7 @@ urlpatterns = [
     path('client/',views.clienteIndex),
     path('client/form',views.clienteForm),
     path('client/form/<int:id>',views.clienteFormUpdate),
+    path('client/view/<int:id>',views.clienteView),
     path('client/file',views.clienteFile),
     path('client/table',views.clienteTable),
     path('cliente/ajax',views.clientePreview),
