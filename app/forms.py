@@ -43,12 +43,8 @@ class ClienteView(ClienteForm):
     def __init__(self, *args, **kwargs):
         super(ClienteView, self).__init__(*args, **kwargs)
         for field in self.fields:
-            self.fields[field].widget.attrs['readonly'] = True
+            self.fields[field].widget.attrs['disabled'] = True
 
-
-
-
-    
 
 def validate_file_extension(value):
     import os
