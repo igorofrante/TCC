@@ -29,7 +29,7 @@ def clienteIndex(request):
     return render(request,'client.html')
 
 def clienteTable(request):
-    clientes = Cliente.objects.all().only('nomec','cpf')
+    clientes = Cliente.objects.all()
     return render(request,'table.html',{'clientes':clientes})
 
 def clienteForm(request):
@@ -53,6 +53,11 @@ def clienteFormUpdate(request,id):
     else:
         form = ClienteForm(instance=cliente)
     return render(request,'form.html',{'form':form})
+
+def clienteDestroy(request,id):
+    cliente = Cliente.objects.get(id=id)
+    cliente.delete()
+    return redirect('/client/table')
 
 def clienteView(request,id):
     cliente = Cliente.objects.get(id=id)

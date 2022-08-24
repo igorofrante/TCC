@@ -15,7 +15,8 @@
         data-pagination="true">  
         <script> $('table').hide();</script>
             <thead class="thead-dark">  
-            <tr>  
+            <tr>
+                <th data-field="id" data-sortable="true">ID</th>  
                 <th data-field="nome" data-sortable="true">Nome Completo</th>
                 <th data-field="cpf">CPF</th>
                 <th>Ações</th>
@@ -25,12 +26,13 @@
             <tbody>  
                 {% for cliente in clientes %}  
                 <tr>  
+                    <td data-field="id">{{ cliente.id }}</td>
                     <td data-field="nome">{{ cliente.nomec }}</td> 
                     <td data-field="cpf">{{ cliente.cpf }}</td>   
                     <td>  
                         <a href="/client/view/{{ cliente.id }}" class="bi bi-person-rolodex"></a>
                         <a href="/client/form/{{ cliente.id }}" class="bi bi-pencil"></a>  
-                        <!-- <a class="bi bi-trash3" onclick="confirmar('/cliente/delete/{{ cliente.id }}');"></a>   -->
+                        <a class="bi bi-trash3" onclick="confirmar('/client/delete/{{ cliente.id }}');"></a> 
                     </td>  
                 </tr>  
                 {% endfor %}  
