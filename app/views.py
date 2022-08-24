@@ -14,11 +14,15 @@ import json
 
 def index(request):
     result = returnresult()
-    return render(request, 'index.html',{'result0': result[0],'result1':result[1]})
+    return render(request, 'index.html',{'result0': "{:.2%}".format(result[0]),'result1':"{:.2%}".format(result[1])})
 
-def dashboardIndex(request):
-    dashboard()
-    return render(request,'dashboard.html')
+def initialize(request):
+    startNN()
+    return index(request)
+
+
+###### CLIENTE
+
 
 def clienteIndex(request):
     pass
@@ -73,8 +77,9 @@ def clientePreview(request):
     resultado = predict(values)
     return render(request, 'ajax.html', {'resultado': resultado})
 
-def initialize(request):
-    startNN()
-    result = returnresult()
-    return render(request,'index.html',{'result0': result[0],'result1':result[1]})
+####### DASHBOARD
+
+def dashboardIndex(request):
+    dashboard()
+    return render(request,'dashboard.html')
 
