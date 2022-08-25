@@ -91,33 +91,39 @@ def dashboard():
     app = DjangoDash('dashboard', add_bootstrap_links=True)   # replaces dash.Dash
 
 
-    fig0 = go.Figure(data=[go.Pie(labels=df['sex'])])
-    fig0.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig0.update_layout(title_text="Gênero",autosize=False, title_x=0.5, width=500, height=500)
-    fig0 = newLegend(fig0,{"1": "Feminino", "2": "Masculino"})
+    fig00 = go.Figure(data=[go.Pie(labels=df['sex'])])
+    fig00.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
+    fig00.update_layout(title_text="Gênero",autosize=False, title_x=0.5, width=500, height=500)
+    fig00 = newLegend(fig00,{"2": "Feminino","1": "Masculino"})
 
-    fig1 = go.Figure(data=[go.Pie(labels=df['education'])])
-    fig1.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig1.update_layout(title_text="Educação",autosize=False, title_x=0.5, width=500, height=500)
-    fig1.update_layout(title_text="Grau de Instrução",autosize=False, width=500, height=500)
-    fig1 = newLegend(fig1,{"1": "Pós Graduado", "2": "Graduado","3": "Ensino Médio","4": "Outros"})
+    fig01 = go.Figure(data=[go.Pie(labels=df['education'])])
+    fig01.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
+    fig01.update_layout(title_text="Educação",autosize=False, title_x=0.5, width=500, height=500)
+    fig01.update_layout(title_text="Grau de Instrução",autosize=False, width=500, height=500)
+    fig01 = newLegend(fig01,{"1": "Pós Graduado", "2": "Graduado","3": "Ensino Médio","4": "Outros"})
 
-    fig2 = go.Figure(data=[go.Pie(labels=df['marriage'])])
-    fig2.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig2.update_layout(title_text="Estado Civil",autosize=False, title_x=0.5, width=500, height=500)
-    fig2 = newLegend(fig2,{"1": "Casado", "2": "Solteiro","3": "Outros"})
+    fig02 = go.Figure(data=[go.Pie(labels=df['marriage'])])
+    fig02.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
+    fig02.update_layout(title_text="Estado Civil",autosize=False, title_x=0.5, width=500, height=500)
+    fig02 = newLegend(fig02,{"1": "Casado", "2": "Solteiro","3": "Outros"})
 
-    fig3 = go.Figure(data=[go.Pie(labels=df['payment'])])
-    fig3.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
-    fig3.update_layout(title_text="Clientes",autosize=False, width=500, height=500)
-    fig3 = newLegend(fig3,{"0": "Adimplentes", "1": "Inadimplentes"})
-
-    fig4 = go.Figure()
-    fig4.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 0], name='Adimplente'))
-    fig4.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 1], name='Inadimplente'))
-    fig4.update_layout(barmode='overlay', title_text="Pagamentos por Faixa Etária", xaxis_title_text='Faixa Etária', yaxis_title_text='Contagem', title_x=0.5)
+    fig03 = go.Figure(data=[go.Pie(labels=df['payment'])])
+    fig03.update_traces(hoverinfo='label+value',textposition='inside', textinfo='percent',textfont_size=20)
+    fig03.update_layout(title_text="Clientes",autosize=False, width=500, height=500)
+    fig03 = newLegend(fig03,{"0": "Adimplentes", "1": "Inadimplentes"})
 
     
+    fig04 = go.Figure()
+    fig04.add_trace(go.Bar(x=['Masculino','Feminino'],y=[df[df['sex'] == 1].loc[df['payment'] == 0]['sex'].count(),df[df['sex'] == 2].loc[df['payment'] == 0]['sex'].count()], name='Adimplente'))
+    fig04.add_trace(go.Bar(x=['Masculino','Feminino'],y=[df[df['sex'] == 1].loc[df['payment'] == 1]['sex'].count(),df[df['sex'] == 2].loc[df['payment'] == 1]['sex'].count()], name='Inadimplente'))
+    fig04.update_layout(title_text="Honra por Gênero",autosize=False, barmode='group', width=500, height=500)
+
+    fig05 = go.Figure()
+
+    fig11 = go.Figure()
+    fig11.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 0], name='Adimplente'))
+    fig11.add_trace(go.Histogram(x=df['age'].loc[df['payment'] == 1], name='Inadimplente'))
+    fig11.update_layout(barmode='overlay', title_text="Pagamentos por Faixa Etária", xaxis_title_text='Faixa Etária', yaxis_title_text='Contagem', title_x=0.5)
 
 
     app.layout = html.Div([ #MAIN DIV
@@ -127,22 +133,28 @@ def dashboard():
 
             html.Div([ ### FIGURES Divs
                 html.Div([
-                    dcc.Graph(figure = fig0),
+                    dcc.Graph(figure = fig00),
                 ], className = 'col-sm'),
                 html.Div([
-                    dcc.Graph(figure = fig1),
+                    dcc.Graph(figure = fig01),
                 ], className = 'col-sm'),
                 html.Div([
-                    dcc.Graph(figure = fig2),
+                    dcc.Graph(figure = fig02),
                 ], className = 'col-sm'),
                 html.Div([
-                    dcc.Graph(figure = fig3),
+                    dcc.Graph(figure = fig03),
+                ], className = 'col-sm'),
+                html.Div([
+                    dcc.Graph(figure = fig04),
+                ], className = 'col-sm'),
+                html.Div([
+                    dcc.Graph(figure = fig05),
                 ], className = 'col-sm'),
             ], className = 'row'),
 
             html.Div([ ### FIGURES Divs
                  html.Div([
-                    dcc.Graph(figure = fig4),
+                    dcc.Graph(figure = fig11),
                 ], className = 'col-sm'),
             ], className = 'row'),
 
