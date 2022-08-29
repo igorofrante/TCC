@@ -59,9 +59,10 @@ function ajaxe() {
    }else{
     alert('Há campos vazios, favor preencher todos os campos antes de utilizar a função estimar!')
    }
-   
-   
+}
 
-    }
+$(document).ready(function (){ //mascara cpf
+  $('#id_cpf').mask('000.000.000-00')
+})
 
 

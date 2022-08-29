@@ -232,3 +232,8 @@ textarea {
     height:3rem;
     vertical-align: middle;
 }
+
+/* TABLE */
+#table {
+    margin: 10px;
+}
