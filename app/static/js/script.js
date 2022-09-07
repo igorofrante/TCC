@@ -54,6 +54,7 @@ function ajaxe() {
       },
       success: function (data) {
           $("#id_payment " + "option[value=" +  data + "]").attr("selected", "selected");
+          $('#estim').html($('#estim').html() + '* Estimado pela rede neural')
         }
       });
    }else{

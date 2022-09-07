@@ -33,7 +33,7 @@ class ClienteForm(forms.ModelForm):
     pay_amt_3 = forms.IntegerField(label= "Pagamento 4")
     pay_amt_2 = forms.IntegerField(label= "Pagamento 5")
     pay_amt_1 = forms.IntegerField(label= "Pagamento 6")
-    payment = forms.ChoiceField(label= "Próximo Pagamento",choices= BLANK_CHOICE_DASH + [("0","Adimplente"),("1","Inadimplente")])
+    payment = forms.ChoiceField(label= "Situação (Próximo pagamento)",choices= BLANK_CHOICE_DASH + [("0","Adimplente"),("1","Inadimplente")])
     class Meta:
         model = Cliente
         fields = '__all__'
