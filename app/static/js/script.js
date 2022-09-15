@@ -64,6 +64,9 @@ function ajaxe() {
 
 $(document).ready(function (){ //mascara cpf
   $('#id_cpf').mask('000.000.000-00')
+  $.ajax({
+    type: "GET",
+    url: "/refresh", 
+  })
 })
-
 

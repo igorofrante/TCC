@@ -1,12 +1,13 @@
 from tracemalloc import start
 from django.shortcuts import redirect, render
+from django.http import HttpResponseRedirect
 from app.forms import * 
 from app.models import *
 from app.data import *
 from app.file import *
 import logging
 import json
-
+from threading import Thread
 
 # Create your views here.
 
@@ -22,7 +23,7 @@ def initialize(request):
 
 
 ###### CLIENTE
-
+refreshResult = False
 
 def clienteIndex(request):
     pass
@@ -32,15 +33,28 @@ def clienteTable(request):
     clientes = Cliente.objects.all()
     return render(request,'table.html',{'clientes':clientes})
 
+def refresh(request):
+    global refreshResult
+    print(refreshResult)
+    if refreshResult:
+        startNN()
+        refreshResult = False
+    else:
+        pass
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 def clienteForm(request):
     if request.method == 'POST':
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
+            global refreshResult
+            refreshResult = True
             return redirect('/client')
     else:
         form = ClienteForm()
     return render(request,'form.html',{'form':form})
+
 
 def clienteFormUpdate(request,id):
     cliente = Cliente.objects.get(id=id)
@@ -49,6 +63,8 @@ def clienteFormUpdate(request,id):
         form = ClienteForm(request.POST,instance=cliente)
         if form.is_valid():
             form.save()
+            global refreshResult
+            refreshResult = True
             return redirect('/client/table')
     else:
         form = ClienteForm(instance=cliente)
@@ -57,6 +73,8 @@ def clienteFormUpdate(request,id):
 def clienteDestroy(request,id):
     cliente = Cliente.objects.get(id=id)
     cliente.delete()
+    global refreshResult
+    refreshResult = True
     return redirect('/client/table')
 
 def clienteView(request,id):
@@ -70,6 +88,8 @@ def clienteFile(request):
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
             insertDB(request.FILES['file'].name)
+            global refreshResult
+            refreshResult = True
             return redirect('/client')   
     else:
         form = ClienteFile()

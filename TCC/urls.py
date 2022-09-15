@@ -31,5 +31,6 @@ urlpatterns = [
     path('client/table',views.clienteTable),
     path('cliente/ajax',views.clientePreview),
     path('initialize/',views.initialize),
+    path('refresh/',views.refresh),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]

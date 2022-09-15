@@ -19,18 +19,17 @@ except:
     pass
 
 def startNN():
-
+    df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
+    df = df.drop(["id","nomec","cpf"], axis=1)
     #Datas
     datas = [df.copy(deep=True),df.copy(deep=True)]
     X_resampled, y_resampled = SMOTE(random_state=1,k_neighbors=4).fit_resample(datas[0].drop('payment',axis=1),datas[0]['payment'])
     dataSM = X_resampled.assign(payment = y_resampled)
     datas[1] = dataSM
 
-
     #escalagem dos dados
     cols = range(0,23)
     
-
     for data in datas:
         # for i in cols:
         #     data[data.columns[i]] = scaler.fit_transform(data[data.columns[i]].values.reshape(-1, 1))
