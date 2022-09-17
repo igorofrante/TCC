@@ -1,6 +1,6 @@
 from tracemalloc import start
 from django.shortcuts import redirect, render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from app.forms import * 
 from app.models import *
 from app.data import *
@@ -10,6 +10,9 @@ import json
 from threading import Thread
 
 # Create your views here.
+
+# logging.basicConfig(filename='mylog.log', level=logging.DEBUG)
+# logging.debug(request)
 
 
 
@@ -35,13 +38,12 @@ def clienteTable(request):
 
 def refresh(request):
     global refreshResult
-    print(refreshResult)
     if refreshResult:
         startNN()
         refreshResult = False
     else:
         pass
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponse(status = 200) 
 
 def clienteForm(request):
     if request.method == 'POST':
@@ -96,8 +98,6 @@ def clienteFile(request):
     return render(request,'file.html',{'form':form})
 
 def clientePreview(request):
-    logging.basicConfig(filename='mylog.log', level=logging.DEBUG)
-    logging.debug(request)
     values = json.loads(request.GET.get('values'))
     resultado = predict(values)
     return render(request, 'ajax.html', {'resultado': resultado})
