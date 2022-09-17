@@ -1,3 +1,4 @@
+from cgitb import text
 from django import forms 
 from app.models import *
 from localflavor.br.forms import BRCPFField 
@@ -37,6 +38,7 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = '__all__'
+    
 
 class ClienteView(ClienteForm):
     pass

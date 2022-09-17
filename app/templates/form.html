@@ -10,6 +10,7 @@
             <h1>Cadastro Cliente</h1>
             <form action="" method="post">
                 {% csrf_token %}
+                {{ form.errors }}
                 <p>{{ form.nomec.label }} {{ form.nomec }} {{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }}</p>
                 <p>{{ form.age.label }} {{ form.age }} {{ form.education.label }} {{ form.education }} {{ form.marriage.label }} {{ form.marriage }}</p>
                 <p>{{ form.mit_bal.label }} {{ form.mit_bal }}</p>
@@ -23,7 +24,7 @@
                 <p id="estim"> {{ form.payment.label }} {{ form.payment }} </p>
                 <div id="confirmar">
                     <input type="submit" class="btn btn-primary mt-3" value="Confirmar">
-                    <a href="/client/" class="btn btn-danger mt-3">Cancelar</a>
+                    <button class="btn btn-danger mt-3" onclick="confirmar2('/client')">Cancelar</button>
                 </div>
             </form>
             <div id="button-estimar">
