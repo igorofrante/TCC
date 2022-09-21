@@ -62,10 +62,12 @@ label {
 }
 input[type=number]{
     width: 100px;
+    margin-right: 5px;
 }
 input[type=text]{
-    width: 300px;
-} 
+    width: 30%;
+    margin-right: 5px;
+}
 
 textarea {
     width: 300px;
@@ -156,8 +158,8 @@ textarea {
 #form {
     display: flex;
     justify-content: center;
-    width: 80%;
-    height: 100%;
+    align-items: center;
+    max-width: 80%;
     flex-direction: column;
     border-radius: 20px;
     font-size: 20px;
@@ -169,8 +171,11 @@ textarea {
 #form > h1 {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+}
 
+#form > form > #nome > input {
+    width: 60%;
 }
 
 #confirmar {
