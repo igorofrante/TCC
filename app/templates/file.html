@@ -9,12 +9,12 @@
         <form enctype="multipart/form-data" action="" method="post" id="file">
             {% csrf_token %}
             <h3>{{ form.file.label }}</h3>
-            <p>{{ form.file }} {{ form.errors }}</p>
-            <!-- <p>{{ form.errors }}</p> -->
+            <p>{{ form.file }}</p>
             <div>
                 <input type="submit" class="btn btn-primary mt-3" value="Carregar">
                 <button class="btn btn-danger mt-3" onclick="confirmar2('/client')" >Cancelar</button>
             </div>
+            <p>{{ form.errors }}</p>
         </form>
     </div>
 

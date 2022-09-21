@@ -82,7 +82,7 @@ function ajaxe() {
     $.confirm({
       title: 'Campos Vazios',
         content: 'Há campos vazios, favor preencher todos os campos antes de utilizar a função estimar!',
-        autoClose: '10000',
+        autoClose: 'tryAgain|10000',
         type: 'red',
         typeAnimated: true,
         buttons: {
@@ -104,10 +104,16 @@ $(document).ready(function (){ //mascara cpf
     url: "/refresh", 
   })
   if ($(".errorlist").length) {
+    var cont;
+    if(location.pathname == "/client/form") {
+      cont = $('#form > ul > li > ul > li').html();
+    }else{
+      cont = $('div > form > ul > li > ul > li').html();
+    }
     $.confirm({
       title: 'Error',
-        content: $('#form > form > ul > li > ul > li').html(),
-        autoClose: '10000',
+        content: cont,
+        autoClose: 'tryAgain|10000',
         type: 'red',
         typeAnimated: true,
         buttons: {
