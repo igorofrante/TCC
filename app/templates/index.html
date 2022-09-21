@@ -10,8 +10,11 @@
             <h2>Rede Neural</h2><br>
             <p>Acurácia dos dados Padrão: {{ result0 }}</p>
             <p>Acurácia dos dados Ampliado: {{ result1 }}</p>
-
+            {%if result0 == "0.00%" %}
             <a href="/initialize"><button class="btn btn-primary" id="button-index">Iniciar</button></a>
+            {%else%}
+            <a href="/initialize"><button class="btn btn-primary" id="button-index">Atualizar</button></a>
+            {%endif%}
         </div>
     </div>
     {% include 'footer.html' %}

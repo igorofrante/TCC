@@ -72,17 +72,17 @@ def clienteFormUpdate(request,id):
         form = ClienteForm(instance=cliente)
     return render(request,'form.html',{'form':form})
 
+def clienteView(request,id):
+    cliente = Cliente.objects.get(id=id)
+    form = ClienteView(instance=cliente)
+    return render(request,'view.html',{'form':form})
+
 def clienteDestroy(request,id):
     cliente = Cliente.objects.get(id=id)
     cliente.delete()
     global refreshResult
     refreshResult = True
     return redirect('/client/table')
-
-def clienteView(request,id):
-    cliente = Cliente.objects.get(id=id)
-    form = ClienteView(instance=cliente)
-    return render(request,'view.html',{'form':form})
 
 def clienteFile(request):
     if request.method == 'POST':
