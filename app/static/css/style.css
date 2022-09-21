@@ -107,6 +107,7 @@ textarea {
     width: 100%;
 }
 
+
 /* DASHBOARD */
 /* .main {
     display: flex;
@@ -244,4 +245,11 @@ textarea {
 
 .errorlist {
     display: none;
+}
+
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
