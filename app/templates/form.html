@@ -9,14 +9,10 @@
             <h1>Cadastro Cliente</h1>
             <form action="" method="post">
                 {% csrf_token %}
-<<<<<<< HEAD
-                {{ form.errors }}
                 <p id="nome" >{{ form.nomec.label }} {{ form.nomec }}</p>
                 <p>{{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }}</p>
-=======
-                <p>{{ form.nomec.label }} {{ form.nomec }} {{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }}</p>
->>>>>>> a7d6fd2b6af02badf6b0facaeb4210944c899737
                 <p>{{ form.age.label }} {{ form.age }} {{ form.education.label }} {{ form.education }} {{ form.marriage.label }} {{ form.marriage }}</p>
+                <hr>
                 <p>{{ form.mit_bal.label }} {{ form.mit_bal }}</p>
                 <p>{{ form.pay_amt_6.label }} {{ form.pay_amt_6 }} {{ form.pay_6.label }} {{ form.pay_6 }}</p>
                 <p>{{ form.bill_amt_6.label }} {{ form.bill_amt_6 }} {{ form.pay_amt_5.label }} {{ form.pay_amt_5 }} {{ form.pay_5.label }} {{ form.pay_5 }}</p>
