@@ -10,6 +10,9 @@
             <h2>Rede Neural</h2><br>
             <p>Acurácia dos dados Padrão: {{ result0 }}</p>
             <p>Acurácia dos dados Ampliado: {{ result1 }}</p>
+            <h2>Regressão Logística</h2><br>
+            <p>Acurácia dos dados Padrão: {{ result2 }}</p>
+            <p>Acurácia dos dados Ampliado: {{ result3 }}</p>
             {%if result0 == "0.00%" %}
             <a href="/initialize"><button class="btn btn-primary" id="button-index">Iniciar</button></a>
             {%else%}

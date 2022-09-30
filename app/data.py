@@ -8,13 +8,14 @@ from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import LogisticRegression
 
 try:
     df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
     df = df.drop(["id","nomec","cpf"], axis=1)
     scaler = MinMaxScaler()
-    clf = [0,0]
-    result = [0,0]
+    clf = [0,0,0,0]
+    result = [0,0,0,0]
 except:
     pass
 
@@ -42,12 +43,41 @@ def startNN():
         features = data.drop('payment',axis=1)
         label = data['payment']
         X_train, X_test, y_train, y_test = train_test_split(features, label, test_size=0.3, random_state=1)
-        model = MLPClassifier(alpha=0.05,hidden_layer_sizes=(12,6,2),activation='tanh', max_iter=250, random_state=1)
+        model = MLPClassifier(random_state=1)
         model.fit(X_train.values,y_train.values)
         clf[i]=model
         result[i] = model.score(X_test.values,y_test.values)
         i+=1
 
+def startLR():
+    df = pd.read_sql_table('cliente','mysql+pymysql://root:123456@localhost:3306/TCC')
+    df = df.drop(["id","nomec","cpf"], axis=1)
+    #Datas
+    datas = [df.copy(deep=True),df.copy(deep=True)]
+    X_resampled, y_resampled = SMOTE(random_state=1,k_neighbors=4).fit_resample(datas[0].drop('payment',axis=1),datas[0]['payment'])
+    dataSM = X_resampled.assign(payment = y_resampled)
+    datas[1] = dataSM
+
+    #escalagem dos dados
+    cols = range(0,23)
+    
+    for data in datas:
+        # for i in cols:
+        #     data[data.columns[i]] = scaler.fit_transform(data[data.columns[i]].values.reshape(-1, 1))
+        data[data.columns[cols]] = scaler.fit_transform(data[data.columns[cols]])
+
+    #classificador
+    i=2   
+
+    for data in datas:
+        features = data.drop('payment',axis=1)
+        label = data['payment']
+        X_train, X_test, y_train, y_test = train_test_split(features, label, test_size=0.3, random_state=1)
+        model = LogisticRegression(random_state=1)
+        model.fit(X_train.values,y_train.values)
+        clf[i]=model
+        result[i] = model.score(X_test.values,y_test.values)
+        i+=1
 
 def returnresult():
     pass
@@ -55,14 +85,21 @@ def returnresult():
 
 
 def predict(values):
+    res = [0,0]
     if hasattr(scaler, "n_features_in_"):
         values = scaler.transform(np.reshape(values,(1,-1)))
-        res = clf[0].predict(values)
+        res[0] = clf[0].predict(values)
+        res[1] = clf[2].predict(values)
     else:
+        print('inicializando')
         startNN()
+        print('rede neural executada')
+        startLR()
+        print('regressao logistica executada')
         values = scaler.transform(np.reshape(values,(1,-1)))
-        res = clf[0].predict(values)
-    return (res[0])
+        res[0] = clf[0].predict(values)
+        res[1] = clf[2].predict(values)
+    return (res)
 
 
 from dash import dcc, html

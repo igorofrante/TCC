@@ -18,10 +18,14 @@ from threading import Thread
 
 def index(request):
     result = returnresult()
-    return render(request, 'index.html',{'result0': "{:.2%}".format(result[0]),'result1':"{:.2%}".format(result[1])})
+    return render(request, 'index.html',{'result0': "{:.2%}".format(result[0]),'result1':"{:.2%}".format(result[1]),'result2':"{:.2%}".format(result[2]),'result3':"{:.2%}".format(result[3])})
 
 def initialize(request):
+    print('inicializando')
     startNN()
+    print('rede neural executada')
+    startLR()
+    print('regressao logistica executada')
     return index(request)
 
 
@@ -98,9 +102,11 @@ def clienteFile(request):
     return render(request,'file.html',{'form':form})
 
 def clientePreview(request):
+    print('predizendo')
     values = json.loads(request.GET.get('values'))
     resultado = predict(values)
-    return render(request, 'ajax.html', {'resultado': resultado})
+    print(resultado)
+    return render(request, 'ajax.html', {'resultado0': resultado[0], 'resultado1': resultado[1]})
 
 ####### DASHBOARD
 

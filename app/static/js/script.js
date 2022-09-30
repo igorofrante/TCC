@@ -74,8 +74,59 @@ function ajaxe() {
         values : JSON.stringify(values)
       },
       success: function (data) {
-          $("#id_payment " + "option[value=" +  data + "]").attr("selected", "selected");
-          $('#estim').html($('#estim').html() + '* Estimado pela rede neural')
+          console.log(data)
+          data = data.split(',');
+          console.log(data)
+          res0 = String(data[0]);
+          res1 = String(data[1]);
+      
+          console.log(data)
+
+          if (res0 == res1){
+            $("#id_payment " + "option[value=" +  res0 + "]").attr("selected", "selected");
+            $('#estim').html($('#estim').html() + '* Estimado por ambos')
+          }else{
+            if (res0 == 0){
+              nr = "Adimplente"
+            }else{
+              nr = "Inadimplente"
+            }
+            if(res1 == 0){
+              lr = "Adimplente"
+            }else{
+              lr = "Inadimplente"
+            }
+          
+            $.confirm({
+              title: 'Resultados diferentes',
+              content: 'A rede neural estimou como um cliente ' + nr + ' e a regressão logísitica como um cliente ' + lr,
+              autoClose: 'RN|20000',
+              buttons: {
+                  RN:{
+                      text: 'Rede Neural',
+                      btnClass: 'btn-primary',
+                      action: function(res0){
+                        $("#id_payment " + "option[value=" +  res0 + "]").attr("selected", "selected");
+                        $('#estim').html($('#estim').html() + '* Estimado pela rede neural')   
+                      }
+                  },
+                  RL:{
+                    text: 'Regressão Logística',
+                    btnClass: 'btn-primary',
+                    action: function(res1){
+                      $("#id_payment " + "option[value=" +  res1 + "]").attr("selected", "selected");
+                      $('#estim').html($('#estim').html() + '* Estimado pela Regressão Logística')
+                    }
+                  }
+              }
+          });
+
+            
+          }
+
+          
+
+          
         }
       });
    }else{
