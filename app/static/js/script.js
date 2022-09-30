@@ -74,13 +74,9 @@ function ajaxe() {
         values : JSON.stringify(values)
       },
       success: function (data) {
-          console.log(data)
           data = data.split(',');
-          console.log(data)
           res0 = String(data[0]);
           res1 = String(data[1]);
-      
-          console.log(data)
 
           if (res0 == res1){
             $("#id_payment " + "option[value=" +  res0 + "]").attr("selected", "selected");
