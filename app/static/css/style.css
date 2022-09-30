@@ -196,12 +196,18 @@ textarea {
     margin: 3px;
 }
 
+#estim {
+    font-weight: bold;
+}
+
 #button-estimar {
     margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 /* FILE */
 #main-file{

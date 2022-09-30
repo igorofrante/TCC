@@ -105,7 +105,6 @@ def clientePreview(request):
     print('predizendo')
     values = json.loads(request.GET.get('values'))
     resultado = predict(values)
-    print(resultado)
     return render(request, 'ajax.html', {'resultado0': resultado[0], 'resultado1': resultado[1]})
 
 ####### DASHBOARD

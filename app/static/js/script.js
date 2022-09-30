@@ -84,7 +84,7 @@ function ajaxe() {
 
           if (res0 == res1){
             $("#id_payment " + "option[value=" +  res0 + "]").attr("selected", "selected");
-            $('#estim').html($('#estim').html() + '* Estimado por ambos')
+            $('#estim').html('* Estimado por ambos');
           }else{
             if (res0 == 0){
               nr = "Adimplente"
@@ -107,7 +107,7 @@ function ajaxe() {
                       btnClass: 'btn-primary',
                       action: function(res0){
                         $("#id_payment " + "option[value=" +  res0 + "]").attr("selected", "selected");
-                        $('#estim').html($('#estim').html() + '* Estimado pela rede neural')   
+                        $('#estim').html('* Estimado pela Rede Neural');   
                       }
                   },
                   RL:{
@@ -115,7 +115,7 @@ function ajaxe() {
                     btnClass: 'btn-primary',
                     action: function(res1){
                       $("#id_payment " + "option[value=" +  res1 + "]").attr("selected", "selected");
-                      $('#estim').html($('#estim').html() + '* Estimado pela Regressão Logística')
+                      $('#estim').html('* Estimado pela Regressão Logística');
                     }
                   }
               }
