@@ -9,6 +9,7 @@
     color: black;
 }
 
+
 body {
     background-color: #ebeff5;
     display: flex;
@@ -85,8 +86,8 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 290px;
+    width: 320px;
+    height: 370px;
     background-color: white;
     flex-direction: column;
     border-radius: 20px;
@@ -197,7 +198,7 @@ textarea {
 }
 
 #estim {
-    font-weight: bold;
+   font-weight: bold;
 }
 
 #button-estimar {
