@@ -86,8 +86,8 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px;
-    height: 370px;
+    width: 550px;
+    height: 270px;
     background-color: white;
     flex-direction: column;
     border-radius: 20px;
@@ -95,11 +95,18 @@ textarea {
     box-shadow: 0px 3px 8px;
 }
 
+#index > #index_child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 97%;
+}
+
 #index > a {
     text-decoration: none;
     outline: none;
-    width: 60%;
-    
+    width: 50%;
+    margin-top: 8px;
 }
 
 #button-index {
