@@ -9,10 +9,12 @@
         <div id="form">
             <h1>Cliente</h1>
             <form action=""> 
+                <h4><strong>Dados Pessoais</strong></h4>
                 <p id="nome" >{{ form.nomec.label }} {{ form.nomec }}</p>
-                <p>{{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }}</p>
-                <p>{{ form.age.label }} {{ form.age }} {{ form.education.label }} {{ form.education }} {{ form.marriage.label }} {{ form.marriage }}</p>
+                <p>{{ form.cpf.label }} {{ form.cpf }} {{ form.sex.label }} {{ form.sex }} {{ form.age.label }} {{ form.age }}</p>
+                <p>{{ form.education.label }} {{ form.education }} {{ form.marriage.label }} {{ form.marriage }}</p>
                 <hr>
+                <h4><strong>Dados Bancários</strong></h4>
                 <p>{{ form.mit_bal.label }} {{ form.mit_bal }}</p>
                 <p>{{ form.pay_amt_6.label }} {{ form.pay_amt_6 }} {{ form.pay_6.label }} {{ form.pay_6 }}</p>
                 <p>{{ form.bill_amt_6.label }} {{ form.bill_amt_6 }} {{ form.pay_amt_5.label }} {{ form.pay_amt_5 }} {{ form.pay_5.label }} {{ form.pay_5 }}</p>
