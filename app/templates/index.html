@@ -7,12 +7,18 @@
     {% include 'navbar.html' %}
     <div id="main-index">
         <div id="index">
-            <h2>Rede Neural</h2>
-            <p>Acurácia Padrão: {{ result0 }}</p>
-            <p>Acurácia Ampliado: {{ result1 }}</p>
-            <h2>Regressão Logística</h2>
-            <p>Acurácia Padrão: {{ result2 }}</p>
-            <p>Acurácia Ampliado: {{ result3 }}</p>
+            <div id="index_child">
+                <div>
+                    <h2>Rede Neural</h2>
+                    <p>Acurácia Padrão: {{ result0 }}</p>
+                    <p>Acurácia Ampliado: {{ result1 }}</p>
+                </div>
+                <div>
+                    <h2>Regressão Logística</h2>
+                    <p>Acurácia Padrão: {{ result2 }}</p>
+                    <p>Acurácia Ampliado: {{ result3 }}</p>
+                </div>
+            </div>
             {%if result0 == "0.00%" %}
             <a href="/initialize"><button class="btn btn-primary" id="button-index">Iniciar</button></a>
             {%else%}
