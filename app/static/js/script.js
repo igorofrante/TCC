@@ -94,14 +94,14 @@ function ajaxe() {
             }
           
             $.confirm({
-              title: 'Resultados diferentes',
-              content: 'A rede neural estimou como um cliente ' + nr + ' e a regressão logísitica como um cliente ' + lr,
+              title: 'Resultados distintos',
+              content: 'A rede neural estimou como um cliente ' + nr + ' e a regressão logísitica como um cliente ' + lr + ', Qual classificador você irá escolher?',
               autoClose: 'RN|20000',
               buttons: {
                   RN:{
                       text: 'Rede Neural',
                       btnClass: 'btn-primary',
-                      action: function(res0){
+                      action: function(){
                         $("#id_payment " + "option[value=" +  res0 + "]").attr("selected", "selected");
                         $('#estim').html('* Estimado pela Rede Neural');   
                       }
@@ -109,7 +109,7 @@ function ajaxe() {
                   RL:{
                     text: 'Regressão Logística',
                     btnClass: 'btn-primary',
-                    action: function(res1){
+                    action: function(){
                       $("#id_payment " + "option[value=" +  res1 + "]").attr("selected", "selected");
                       $('#estim').html('* Estimado pela Regressão Logística');
                     }
