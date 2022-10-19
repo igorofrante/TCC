@@ -1,13 +1,12 @@
-from tracemalloc import start
+
 from django.shortcuts import redirect, render
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponse
 from app.forms import * 
 from app.models import *
 from app.data import *
 from app.file import *
 import logging
 import json
-from threading import Thread
 
 # Create your views here.
 

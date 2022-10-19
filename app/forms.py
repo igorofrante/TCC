@@ -1,4 +1,3 @@
-from cgitb import text
 from django import forms 
 from app.models import *
 from localflavor.br.forms import BRCPFField 
