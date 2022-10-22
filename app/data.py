@@ -82,7 +82,7 @@ def predict(values):
     if hasattr(scaler, "n_features_in_"):
         values = scaler.transform(np.reshape(values,(1,-1)))
         res[0] = clf[1].predict(values)[0]
-        res[1] = clf[2].predict(values)[0] #decidir entre 2 e 3
+        res[1] = clf[2].predict(values)[0] 
     else:
         print('inicializando')
         startNN()
@@ -91,7 +91,7 @@ def predict(values):
         print('regressao logistica executada')
         values = scaler.transform(np.reshape(values,(1,-1)))
         res[0] = clf[1].predict(values)[0]
-        res[1] = clf[2].predict(values)[0] #decidir entre 2 e 3
+        res[1] = clf[2].predict(values)[0] 
     return (res)
 
 

@@ -32,9 +32,9 @@
                         <td data-field="nome">{{ cliente.nomec }}</td>
                         <td data-field="cpf">{{ cliente.cpf }}</td>
                         <td>
-                            <a href="/client/view/{{ cliente.id }}" class="bi bi-person-rolodex"></a>
-                            <a href="/client/form/{{ cliente.id }}" class="bi bi-pencil"></a>
-                            <a class="bi bi-trash3" onclick="confirmar('/client/delete/{{ cliente.id }}');"></a>
+                            <a href="/client/view/{{ cliente.id }}" class="bi bi-person-rolodex" data-toggle="tooltip" data-placement="top" title="Visualizar"></a>
+                            <a href="/client/form/{{ cliente.id }}" class="bi bi-pencil" data-toggle="tooltip" data-placement="top" title="Editar"></a>
+                            <a class="bi bi-trash3" onclick="confirmar('/client/delete/{{ cliente.id }}');" data-toggle="tooltip" data-placement="top" title="Excluir"></a>
                         </td>
                     </tr>
                     {% endfor %}
