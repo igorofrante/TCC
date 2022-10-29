@@ -88,8 +88,8 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 550px;
-    height: 270px;
+    width: 600px;
+    height: 300px;
     background-color: white;
     flex-direction: column;
     border-radius: 20px;
@@ -97,11 +97,26 @@ textarea {
     box-shadow: 0px 3px 8px;
 }
 
-#index > #index_child{
+#index > #index_child {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 97%;
+    margin-bottom: 4px;
+}
+
+table, th, td {
+    padding: 7px;
+    text-align: center;
+}
+
+table > caption {
+    caption-side: top;
+    text-align:center;
+    color: black;
+    font-size: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 #index > a {
@@ -109,6 +124,7 @@ textarea {
     outline: none;
     width: 50%;
     margin-top: 8px;
+    margin-bottom: 5px;
 }
 
 #button-index {
@@ -272,4 +288,5 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: 0;
 }

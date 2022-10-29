@@ -8,16 +8,32 @@
     <div id="main-index">
         <div id="index">
             <div id="index_child">
-                <div>
-                    <h2>Rede Neural</h2>
-                    <p>{{ result0 }}</p>
-                    <p>{{ result1 }}</p>
-                </div>
-                <div>
-                    <h2>Regressão Logística</h2>
-                    <p>{{ result2 }}</p>
-                    <p>{{ result3 }}</p>
-                </div>
+                <table>
+                    <caption><strong>Acurácia</strong> </caption>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th colspan="2">Classificadores</th>
+                        </tr>
+                        <tr>
+                            <th>Conjunto de dados</th>
+                            <th>Redes Neurais</th>
+                            <th>Regressão Logistica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Padrão</td>
+                            <td>{{ result0 }}</td>
+                            <td>{{ result2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>Ampliado</td>
+                            <td>{{ result1 }}</td>
+                            <td>{{ result3 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             {%if result0 == "0.00%" %}
             <a href="/initialize"><button class="btn btn-primary" id="button-index">Iniciar</button></a>
