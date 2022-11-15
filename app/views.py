@@ -63,7 +63,7 @@ def clienteForm(request):
 
 def clienteFormUpdate(request,id):
     cliente = Cliente.objects.get(id=id)
-
+ 
     if request.method == 'POST':
         form = ClienteForm(request.POST,instance=cliente)
         if form.is_valid():

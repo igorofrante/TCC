@@ -95,7 +95,7 @@ function ajaxe() {
           
             $.confirm({
               title: 'Resultados distintos',
-              content: 'A rede neural estimou como um cliente ' + nr + ' e a regressão logísitica como um cliente ' + lr + ', Qual classificador você irá escolher?',
+              content: 'A rede neural estimou como um cliente ' + nr + ' e a regressão logísitica como um cliente ' + lr + '. Qual classificador você irá escolher?',
               autoClose: 'RN|20000',
               buttons: {
                   RN:{
